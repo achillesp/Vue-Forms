@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Project;
+use App\Client;
 use Illuminate\Http\Request;
 
-class ProjectsController extends Controller
+class ClientsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -24,8 +24,8 @@ class ProjectsController extends Controller
      */
     public function create()
     {
-        return view('projects.create', [
-            'projects' => Project::all()
+        return view('clients.create', [
+            'clients' => Client::all()
         ]);
     }
 
@@ -38,13 +38,12 @@ class ProjectsController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'name' => 'required',
-            'description' => 'required'
+            'name' => 'required'
         ]);
 
-        Project::create($request->only(['name', 'description', 'client_id', 'started_at', 'hours', 'complete']));
+        Client::create($request->only(['name']));
 
-        return ['message' => 'Project Created!'];
+        return ['message' => 'Client Created!'];
     }
 
     /**

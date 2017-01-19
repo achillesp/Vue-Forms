@@ -17,13 +17,12 @@ new Vue({
     data: {
         form: new Form({
             name: '',
-            description: ''
         }),
     },
 
     methods: {
         onSubmit() {
-            this.form.post('/projects')
+            this.form.post('/clients')
                 .then(response => alert('Wahoo!'))
                 .catch(error => console.log(error));
         }
