@@ -2,15 +2,16 @@
     <field :name="name" :error="error">
         <label :for="name" class="control-label">{{ title }}</label>
         <el-date-picker
+            style="display: block"
+            v-model="dateValue"
             type="date"
-            format="dd-MM-yyyy"
-            placeholder=""
+            placeholder="Pick a day"
+            format="MM-dd-yyyy"
             :id="name"
             :name="name"
-            class="form-control"
-            :value="value"
-            @input="updateValue($event.target.value)"
-        >
+            @change="updateValue"
+            ref="mydatepicker"
+          >
         </el-date-picker>
     </field>
 </template>
@@ -19,10 +20,16 @@
     import Field from './Field.vue';
 
     export default {
-        name: 'TextField',
+        name: 'DateField',
 
         components: {
             Field,
+        },
+
+        data() {
+            return {
+                dateValue: this.value
+            }
         },
 
         props: ['name', 'title', 'value', 'error'],
@@ -30,9 +37,8 @@
         methods: {
             updateValue(value) {
                 // sanitize, validate etc
-                if (value) {
-                    this.$emit('valid');
-                }
+
+                this.$emit('valid');
 
                 this.$emit('input', value);
             }

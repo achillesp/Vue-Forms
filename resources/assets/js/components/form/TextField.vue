@@ -7,7 +7,7 @@
             class="form-control"
             :value="value"
             @input="updateValue($event.target.value)"
-            ref="input">
+        >
     </field>
 </template>
 

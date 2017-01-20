@@ -6,7 +6,6 @@
             :name="name"
             class="form-control"
             @input="updateValue($event.target.value)"
-            ref="input"
         >{{value}}</textarea>
     </field>
 </template>

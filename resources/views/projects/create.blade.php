@@ -19,11 +19,17 @@
 
             <textarea-field name="description" title="Project Description:" v-model="form.description" :error="form.errors.get('description')" @valid="form.errors.clear('description')"></textarea-field>
 
+            <number-field name="hours" title="Hours spent on project:" v-model="form.hours" :error="form.errors.get('hours')" @valid="form.errors.clear('hours')"></number-field>
+
+            <date-field name="started_at" title="Start date:" v-model="form.started_at" :error="form.errors.get('started_at')" @valid="form.errors.clear('started_at')"></date-field>
+
             <div class="form-group">
                 <button class="btn btn-success" :disabled="form.errors.any()">Create</button>
             </div>
         </form>
     </div>
+
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-default/index.css">
 
     <script src="/js/projects.js"></script>
 </body>

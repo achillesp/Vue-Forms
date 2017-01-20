@@ -39,7 +39,9 @@ class ProjectsController extends Controller
     {
         $this->validate($request, [
             'name' => 'required',
-            'description' => 'required'
+            'description' => 'required',
+            'hours' => 'integer',
+            'started_at' => 'date_format:m-d-Y'
         ]);
 
         Project::create($request->only(['name', 'description', 'client_id', 'started_at', 'hours', 'complete']));

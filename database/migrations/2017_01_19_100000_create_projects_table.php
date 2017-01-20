@@ -20,7 +20,7 @@ class CreateProjectsTable extends Migration
             $table->integer('client_id')->unsigned()->nullable();
             $table->foreign('client_id')->references('id')->on('clients');
             $table->date('started_at')->nullable();
-            $table->integer('hours')->default(0);
+            $table->smallInteger('hours')->unsigned()->default(0);
             $table->boolean('complete')->default(false);
             $table->timestamps();
         });
