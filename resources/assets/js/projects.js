@@ -9,6 +9,7 @@ import TextField from './components/form/TextField.vue';
 import TextareaField from './components/form/TextareaField.vue';
 import NumberField from './components/form/NumberField.vue';
 import DateField from './components/form/DateField.vue';
+import SelectField from './components/form/SelectField.vue';
 
 // Register plugins
 Vue.use(ElementUI, {locale});
@@ -23,7 +24,8 @@ new Vue({
         TextField,
         TextareaField,
         NumberField,
-        DateField
+        DateField,
+        SelectField
     },
 
     data: {
@@ -31,7 +33,8 @@ new Vue({
             name: '',
             description: '',
             hours: '',
-            started_at: ''
+            started_at: '',
+            client_id: ''
         }),
     },
 

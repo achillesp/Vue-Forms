@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Client;
 use App\Project;
 use Illuminate\Http\Request;
 
@@ -25,7 +26,8 @@ class ProjectsController extends Controller
     public function create()
     {
         return view('projects.create', [
-            'projects' => Project::all()
+            'projects' => Project::all(),
+            'clients' => Client::all()
         ]);
     }
 

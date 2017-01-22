@@ -23,6 +23,8 @@
 
             <date-field name="started_at" title="Start date:" v-model="form.started_at" :error="form.errors.get('started_at')" @valid="form.errors.clear('started_at')"></date-field>
 
+            <select-field name="client_id" title="Client:" v-model="form.client_id" :options="{{ $clients }}" :error="form.errors.get('client_id')" @valid="form.errors.clear('client_id')"></select-field>
+
             <div class="form-group">
                 <button class="btn btn-success" :disabled="form.errors.any()">Create</button>
             </div>

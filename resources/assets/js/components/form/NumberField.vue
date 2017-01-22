@@ -33,16 +33,11 @@
         methods: {
             updateValue(value) {
                 // sanitize, validate etc
-                // if (Number.isInteger(Number(value))) {
-                //     this.$emit('valid');
-                // } else {
-                //     this.$emit('invalid');
-                // }
+                if (Number.isInteger(value)) {
+                    this.$emit('valid');
+                }
 
                 this.$emit('input', value);
-            },
-            handleChange(value) {
-                console.log(value)
             }
         }
     }
