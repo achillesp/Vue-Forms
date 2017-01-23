@@ -27,7 +27,7 @@ class ProjectsController extends Controller
     {
         return view('projects.create', [
             'projects' => Project::all(),
-            'clients' => Client::all()
+            'clients' => Client::all()->pluck('name','id')
         ]);
     }
 
